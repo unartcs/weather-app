@@ -1,0 +1,53 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    width: 100vw;
+}
+
+.search_container {
+    display: flex;
+    /* border: 1px solid red; */
+}
+
+.header {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    /* padding: 16px; */
+}
+
+.display_weather_container {
+    margin-top: 5%;
+    display: flex;
+    border: 1px solid red;
+    width: 99%;
+    height: 50%;
+}
+
+.display_weather {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, auto);
+    width: 100%;
+}
+
+.error-container {
+    padding-top: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease-in-out 0.2s;
+}
+
+.animate {
+    opacity: 1;
+    transition: all ease-in-out 0.2s;
+    visibility: visible;
+}
