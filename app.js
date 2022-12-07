@@ -42,7 +42,7 @@ async function getPictureData(string) {
 function changeBackgroundImage(link) {
     const bodySelector = document.querySelector('body')
     bodySelector.style.backgroundImage = `url(${link})`
-    bodySelector.style.backgroundRepeat  = 'no-repeat'
+    bodySelector.style.backgroundRepeat = 'no-repeat'
     bodySelector.style.backgroundPosition = "center";
     bodySelector.style.backgroundSize = 'cover'
 
@@ -67,7 +67,8 @@ function displayWeather(data) {
         // minTempDiv = weatherContainer.querySelector('.temp_min'),
         feelsLikeDiv = weatherContainer.querySelector('.feels_like'),
         humidityDiv = weatherContainer.querySelector('.humidity'),
-        windsDiv = weatherContainer.querySelector('.wind_speed');
+        windsDiv = weatherContainer.querySelector('.wind_speed'),
+        dateTimeDiv = weatherContainer.querySelector('.date-time')
     locationDiv.textContent = data.name;
     // tempDiv.textContent =
     descDiv.textContent = fixCases(data.weather[0].description) + ' ' + calcTemp(data.main.temp)
@@ -76,6 +77,14 @@ function displayWeather(data) {
     feelsLikeDiv.textContent = 'Feels Like: ' + calcTemp(data.main.feels_like)
     humidityDiv.textContent = 'Humidity: ' + data.main.humidity + '%'
     windsDiv.textContent = 'Wind: ' + data.wind.speed + 'm/s'
+    let currentdate = new Date();
+    let datetime = currentdate.getDate() + "/"
+        + (currentdate.getMonth() + 1) + "/"
+        + currentdate.getFullYear() + " @ "
+        + currentdate.getHours() + ":"
+        + currentdate.getMinutes() + ":"
+        + currentdate.getSeconds();
+    dateTimeDiv.textContent = datetime
     getPictureData(`${data.name}`)
 }
 

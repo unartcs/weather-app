@@ -14,6 +14,7 @@ body {
     align-items: center;
     width: 100vw;
     font-family: 'Hind', sans-serif;
+    background-color: black;
 }
 
 .search_container {
@@ -31,9 +32,9 @@ body {
 .display_weather_container {
     margin-top: 5%;
     display: flex;
-    width: 99%;
+    width: 100%;
     height: 50%;
-    background-color: rgba(255, 255, 255, 0.13);
+    background-color: rgba(255, 255, 255, 0.311);
 }
 
 .display_weather {
@@ -78,4 +79,8 @@ body {
 }
 a:link, a:visited {
     text-decoration: none;
+}
+
+.date-time {
+    font-size: 16px;
 }
